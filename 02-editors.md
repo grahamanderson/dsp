@@ -7,6 +7,7 @@ Computing's interface is text. To work effectively, you need to be fluent with t
 ### Typing
 
 It may sound silly, but [make sure](http://www.typingtest.com/) you know how to type. You should be comfortable typing with perfect accuracy at 60 words per minute, at least. If you currently can't, practice until you can.
+Nobody said I'd have to learn to type. Ack––I Quit?!
 
 A lot of your work will be done in a text editor. You have to know how to use your editor. Any editor will work, but knowing a powerful editor well will make you faster, more comfortable, and more effective.
 
@@ -60,14 +61,12 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
-
---
+>I use _nano_ every now and then for quick editing of files. Generally, I don't use terminal editors for anything serious––mostly for config files.
 
 ###Q2. Graphical Editor
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>I'm going to use _Sublime Text 3_ for this course––for compatibility with other folks. I'm familar with Eclipse, Coda, Webstorm, Pycharm, and I love Jupyter––except for its Windows 95 file system
 
  

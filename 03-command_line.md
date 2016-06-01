@@ -28,7 +28,13 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+* ls lists invisible files
+* ls -a -> include invisible files
+* ls -l -> file lists in permissions, ownership, group––verbose mode
+* ls -lh -> same as ls -l and include file sizes
+* ls -lah -> same as above and includes invisible files
+* ls -t  -> sorts by time modified
+* ls -Glp -> long format with color mode enabled, writes a slash after directory items
 
 ---
 
@@ -36,7 +42,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+* -R display of subdirectories is a plus
+* -P lists actual link over reference
+* -u gives time of last access
+* -S sorts by filesize
+* -k prints in kilobytes
 
 ---
 
@@ -44,7 +54,11 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
+Xargs displays whatever comes to its stdin. The below returns lines of 4 characters
+`echo a b c d e f g h | xargs -n 4`
+returns 
+``` a b c d
+e f g h
+```
  
 
