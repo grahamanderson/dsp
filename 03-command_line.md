@@ -13,7 +13,36 @@ these in a couple of hours.
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+show hidden files-
+`defaults write com.apple.finder AppleShowAllFiles TRUE`
+
+secure erase of free space-
+`diskutil secureErase freespace 3 /Volumes/name-of-drive`
+
+copy/paste text
+`pbcopy < blogpost.txt'
+
+find top ten largest files
+`du -a /var | sort -n -r | head -n 10`
+
+copy large amounts of data
+`pbcopy < blogpost.txt`
+
+start a simple server
+`python -m SimpleHTTPServer 8000`
+
+run the same command again
+`$ !!`
+
+view file system usage
+sudo fs_usage
+
+command line calculator
+bc -l	
+
+line/word/char count
+wc file1
+
 
 ---
 
