@@ -55,6 +55,6 @@ Here's your first chance to practice this:
 
 What is your favorite [emoji](http://www.emoji-cheat-sheet.com/)?
 
->Today's emoji favorite is the :baby_chick:. 
+A1. Today's emoji favorite is the 🐥
 
 
