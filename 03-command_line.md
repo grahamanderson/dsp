@@ -13,35 +13,35 @@ these in a couple of hours.
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
-show hidden files-
-`defaults write com.apple.finder AppleShowAllFiles TRUE`
+>>show hidden files-
+```defaults write com.apple.finder AppleShowAllFiles TRUE```
 
-secure erase of free space-
-`diskutil secureErase freespace 3 /Volumes/name-of-drive`
+>>secure erase of free space-
+```diskutil secureErase freespace 3 /Volumes/name-of-drive```
 
-copy/paste text
-`pbcopy < blogpost.txt'
+>>copy/paste text
+```pbcopy < blogpost.txt```
 
-find top ten largest files
-`du -a /var | sort -n -r | head -n 10`
+>>find top ten largest files
+```du -a /var | sort -n -r | head -n 10```
 
-copy large amounts of data
-`pbcopy < blogpost.txt`
+>>copy large amounts of data
+```pbcopy < blogpost.txt```
 
-start a simple server
-`python -m SimpleHTTPServer 8000`
+>>start a simple server
+```python -m SimpleHTTPServer 8000```
 
-run the same command again
-`$ !!`
+>>run the same command again
+```$ !!```
 
-view file system usage
-sudo fs_usage
+>>view file system usage
+```sudo fs_usage```
 
-command line calculator
-bc -l	
+>>command line calculator
+```bc -l```
 
-line/word/char count
-wc file1
+>>line/word/char count
+```wc file1```
 
 
 ---
@@ -57,19 +57,22 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-* ls lists invisible files
-* ls -a -> include invisible files
-* ls -l -> file lists in permissions, ownership, group––verbose mode
-* ls -lh -> same as ls -l and include file sizes
-* ls -lah -> same as above and includes invisible files
-* ls -t  -> sorts by time modified
-* ls -Glp -> long format with color mode enabled, writes a slash after directory items
+### Answer
+
++ ls lists invisible files
++ ls -a -> include invisible files
++ ls -l -> file lists in permissions, ownership, group––verbose mode
++ ls -lh -> same as ls -l and include file sizes
++ ls -lah -> same as above and includes invisible files
++ ls -t  -> sorts by time modified
++ ls -Glp -> long format with color mode enabled, writes a slash after directory items
 
 ---
 
 ###Q3.  More List Files in Unix  
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
+
 
 * -R display of subdirectories is a plus
 * -P lists actual link over reference
@@ -83,8 +86,9 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
+###Q4. Answer
 Xargs displays whatever comes to its stdin. The below returns lines of 4 characters
-`echo a b c d e f g h | xargs -n 4`
+```echo a b c d e f g h | xargs -n 4```
 returns 
 ``` a b c d
 e f g h
