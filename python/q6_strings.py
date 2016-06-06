@@ -1,84 +1,71 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 
+# Programmer Notes: The code is also contained within a Gist--created the code in Jupyter: 
+# https://gist.github.com/a2f79db22757a127a96d4dfbb2c8f905
+
 
 def donuts(count):
-    """
-    Given an int count of a number of donuts, return a string of the
-    form 'Number of donuts: <count>', where <count> is the number
-    passed in. However, if the count is 10 or more, then use the word
-    'many' instead of the actual count.
-
-    >>> donuts(4)
-    'Number of donuts: 4'
-    >>> donuts(9)
-    'Number of donuts: 9'
-    >>> donuts(10)
-    'Number of donuts: many'
-    >>> donuts(99)
-    'Number of donuts: many'
-    """
-    raise NotImplementedError
+    try:
+        count = int(count)
+    except Exception:
+        return "Ack, enter in an integer next time, ok?!"
+    
+    if count <= 10:
+        return "Number of donuts: {0}".format(count)
+    elif count > 10:
+        return "Number of donuts: many"
+    
+donuts("disruptive uber-esque thin layer innovation through value chain optimization ")
 
 
-def both_ends(s):
-    """
+
+
+""" BOTH ENDS    
     Given a string s, return a string made of the first 2 and the last
     2 chars of the original string, so 'spring' yields 'spng'.
     However, if the string length is less than 2, return instead the
     empty string.
+"""
+def both_ends(s):     
+    if len(s) >= 2:
+        return s[0:2]+ s[-2:]
 
-    >>> both_ends('spring')
-    'spng'
-    >>> both_ends('Hello')
-    'Helo'
-    >>> both_ends('a')
-    ''
-    >>> both_ends('xyz')
-    'xyyz'
-    """
-    raise NotImplementedError
+print(both_ends("spring"))
 
 
-def fix_start(s):
-    """
+
+""" FIX START  
     Given a string s, return a string where all occurences of its
     first char have been changed to '*', except do not change the
     first char itself. e.g. 'babble' yields 'ba**le' Assume that the
     string is length 1 or more.
+"""
 
-    >>> fix_start('babble')
-    'ba**le'
-    >>> fix_start('aardvark')
-    'a*rdv*rk'
-    >>> fix_start('google')
-    'goo*le'
-    >>> fix_start('donut')
-    'donut'
-    """
-    raise NotImplementedError
+import re
+def fix_start(s):
+    return(s[0:1] + re.sub(s[0:1], '*', s[1:]))
+
+# I feel pretty embarrased by this hacky solution. 
+# Once done with the prework, I'll spend a little time on a regex refresher
+print(fix_start("babble"))
 
 
-def mix_up(a, b):
-    """
+""" MIX UP
     Given strings a and b, return a single string with a and b
     separated by a space '<a> <b>', except swap the first 2 chars of
     each string. Assume a and b are length 2 or more.
 
-    >>> mix_up('mix', 'pod')
-    'pox mid'
-    >>> mix_up('dog', 'dinner')
-    'dig donner'
-    >>> mix_up('gnash', 'sport')
-    'spash gnort'
-    >>> mix_up('pezzy', 'firm')
-    'fizzy perm'
-    """
-    raise NotImplementedError
+"""
+def mix_up(a, b):
+    return b[0:2]+ a[2:] + " " +  a[0:2]+ b[2:]
+    #return ''.join([ b[0:2],a[2:],' ', a[0:2]+ b[2:] ])
+
+mix_up("dog", "dinner")
 
 
-def verbing(s):
-    """
+
+""" VERBING
     Given a string, if its length is at least 3, add 'ing' to its end.
     Unless it already ends in 'ing', in which case add 'ly' instead.
     If the string length is less than 3, leave it unchanged. Return
@@ -90,12 +77,23 @@ def verbing(s):
     'swimingly'
     >>> verbing('do')
     'do'
-    """
-    raise NotImplementedError
+"""
+
+def verbing(s):
+    if len(s)>= 3:
+        if s[-3:]=="ing":
+            return s+ "ly"
+        elif s[-3] != "ing":
+            return s+ "ing"
+        else:
+            return s+"ingly"
+    else:
+        return s
+
+verbing('do')
 
 
-def not_bad(s):
-    """
+""" NOT BAD
     Given a string, find the first appearance of the substring 'not'
     and 'bad'. If the 'bad' follows the 'not', replace the whole
     'not'...'bad' substring with 'good'. Return the resulting string.
@@ -110,12 +108,18 @@ def not_bad(s):
     'This tea is not hot'
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
-    """
-    raise NotImplementedError
+"""
+
+import re
+
+def not_bad(s):
+    return re.sub(r'not.*bad', 'good', s, flags=re.IGNORECASE)
+
+not_bad("This tea is not hot")
 
 
-def front_back(a, b):
-    """
+ """FRONT_BACK
+    
     Consider dividing a string into two halves. If the length is even,
     the front and back halves are the same length. If the length is
     odd, we'll say that the extra char goes in the front half. e.g.
@@ -129,5 +133,20 @@ def front_back(a, b):
     'abcxydez'
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
-    """
-    raise NotImplementedError
+"""
+
+def half_len(s):
+    if len(s) % 2 == 0:
+        half_len = int(len(s)/2)
+    else:
+        half_len = int(len(s)/2) + 1
+    return half_len
+
+
+def front_back(s1,s2):
+    s1_half = half_len(s1)
+    s2_half = half_len(s2)
+    
+    return s1[0:s1_half] + s2[0:s2_half] + s1[s1_half:] + s2[s2_half:]
+
+front_back('Kitten', 'Donut')
