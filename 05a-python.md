@@ -12,7 +12,9 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+Different: Lists can be changed.  tuples are immutable. syntax is also different.
+tuples will not work with key/values (dictionaries). Key/Vals in Dictionary can be changed at will.
+
 
 ---
 
@@ -20,7 +22,9 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+In sets, only pre-existing keys can have there values changed
+In lists, keys and values can be changed 
+As sets are dealign with a fixed number of elements, they are more memory efficient
 
 ---
 
@@ -28,7 +32,10 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+lambda allow you to create small anonymous functions...great when when the function is simple and you don't want to write a formal one with all the syntax and such. Especially true when working row/col calcs in Pandas
+
+An lamdas example of lowercase'ing column names in a dataframe
+df.rename(columns=lambda x: x.lower(), inplace=True) 
 
 ---
 
@@ -47,29 +54,49 @@ Use Python to compute days between start and stop date.
 a.  
 
 ```
+from datetime import datetime
+date_format = '%m-%d-%Y'
 date_start = '01-02-2013'    
 date_stop = '07-28-2015'
+
+def delta_calc(date_start, date_stop, date_format):
+    a = datetime.strptime(date_start, date_format)
+    b = datetime.strptime(date_stop, date_format) 
+    delta = b-a 
+    return delta
+
+delta = delta_calc(date_start,date_stop,date_format)
+print("{0} days have passed".format(delta.days))
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> 937 days have passed
 
 b.  
 ```
 date_start = '12312013'  
-date_stop = '05282015'  
+date_stop = '05282015'
+date_format = "%m%d%Y"
+
+delta = delta_calc(date_start,date_stop,date_format)
+print("{0} days have passed".format(delta.days))
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> 513 days have passed
 
 c.  
 ```
 date_start = '15-Jan-1994'      
-date_stop = '14-Jul-2015'  
+date_stop = '14-Jul-2015'
+date_format = '%d-%b-%Y' 
+
+delta = datetime.strptime(date_stop, date_format) - datetime.strptime(date_start, date_format)
+print("{0} days have passed".format(delta.days))
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+>> 7,850 days have passed
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
+>>Done. I also coded this in Jupyter. Here is the [Gist](https://gist.github.com/a2f79db22757a127a96d4dfbb2c8f905).
 
 ---
 
