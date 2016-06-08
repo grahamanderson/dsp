@@ -1,3 +1,5 @@
+# Code orgininally writen in ../jupyter
+
 # The football.csv file contains the results from the English Premier League. 
 # The columns labeled ‘Goals’ and ‘Goals Allowed’ contain the total number of 
 # goals scored for and against each team in that season (so Arsenal scored 79 goals 
