@@ -12,8 +12,12 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
-Different: Lists can be changed.  tuples are immutable. syntax is also different.
-tuples will not work with key/values (dictionaries). Key/Vals in Dictionary can be changed at will.
+>>Tuples, you can't add/delete objects from it. Lists, you can add/delete/amend/whatever-you-want.  Both sequences of elements.
+For syntax, tuples use parens, lists use brackets.
+Tuples are much faster for searching. Tuples great for storing contants.
+
+Dictionary keys must be immutable––Tuples are immutable. 
+Lists are disqualified as they can be added/amended/deleted
 
 
 ---
@@ -22,9 +26,16 @@ tuples will not work with key/values (dictionaries). Key/Vals in Dictionary can 
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
-In sets, only pre-existing keys can have there values changed
-In lists, keys and values can be changed 
-As sets are dealign with a fixed number of elements, they are more memory efficient
+>>In sets, there are no duplicate elements. Sets are much faster. In lists, elements can be overwritten, changed, assigned. 
+As there are no duplicate elements, sets are faster. At times (like in 05b), I use sets to find unique values
+
+```
+list_array = ['apple', 'pear', 'orange']
+set = {'dali', 'nihilist', 'surrealism'}
+```
+
+
+
 
 ---
 
@@ -34,8 +45,11 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 lambda allow you to create small anonymous functions...great when when the function is simple and you don't want to write a formal one with all the syntax and such. Especially true when working row/col calcs in Pandas
 
-An lamdas example of lowercase'ing column names in a dataframe
-df.rename(columns=lambda x: x.lower(), inplace=True) 
+>>Lambda example––stripping whitespace from column names in a dataframe(used in 05b-python)
+
+```
+df.rename(columns=lambda x: x.strip())
+```
 
 ---
 
@@ -43,7 +57,28 @@ df.rename(columns=lambda x: x.lower(), inplace=True)
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>>List comprehension are a way to iterate over items in a list. 
+You can also use lambda for this task--especially works well with pandas
+
+
+```
+# List Comprehension: Count how many p items in large sample >= .18
+over_18_count = len([p for p in large_sample if p>= .18])
+```
+
+>>Maps applies a function to items in a list
+Works particularly well with lambda
+
+```
+# Map Example
+# Square every item in the items array. Myself, I prefer numpy which allows you  easy array calcs(below) 
+items = [1, 2, 3, 4, 5]
+list(map((lambda x: x**2), items))
+
+# Numpy example (more elegant, imo)
+a = np.array([2,3,4])*2) = [4,6,8]
+
+```
 
 ---
 
@@ -102,12 +137,13 @@ Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
 ###Q6. Strings
 Edit the 7 functions in [q6_strings.py](python/q6_strings.py)
+>>Ok
 
 ---
 
 ###Q7. Lists
 Edit the 5 functions in [q7_lists.py](python/q7_lists.py)
-
+>>Ok
 ---
 
 ###Q8. Parsing

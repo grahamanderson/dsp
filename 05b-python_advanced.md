@@ -156,7 +156,7 @@ professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn
 ```
 
 
->> Ok. Question--Why would you want a key as an array? 
+>>Ok.
 
 ```
 {('Warren', 'B.'): ['Ph.D.', 'Professor of Biostatistics', 'warren@upenn.edu'], ('Susan', 'S'): [' Ph.D.', 'Professor of Biostatistics', 'sellenbe@upenn.edu'], ('Rebecca', 'A'): [' PhD', 'Associate Professor of Biostatistics', 'rhubb@mail.med.upenn.edu'],
@@ -179,7 +179,7 @@ print(dict)
 
 ####Q8.  It looks like the current dictionary is printing by first name.  Print out the dictionary key value pairs based on alphabetical orders of the last name of the professors
 
->> Are we still using a key array? If so, here you go
+>>Ok
 
 ```
 {('Li', 'Yimei'): [' Ph.D.', 'Assistant Professor of Biostatistics', 'liy3@email.chop.edu'], ('A.', 'Jason'): [' Ph.D.', 'Associate Professor of Biostatistics', 'jaroy@mail.med.upenn.edu'], ('Elana', 'Michelle'): [' PhD', 'Assistant Professor is Biostatistics', 'michross@upenn.edu'],

@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/robert/ds/metis/prework/ThinkStats2/code"
 		}
 	]
 }
